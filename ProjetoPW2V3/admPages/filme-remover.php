@@ -6,7 +6,7 @@
 
     include("../conexao.php");
 
-    $stmt = $pdo->prepare("delete from tbcontato where idFilmes = $id");	    
+    $stmt = $pdo->prepare("delete from tbfilmes where idFilmes = $id");	    
 	$stmt ->execute();    
 
     header("location:admPage.php"); 
