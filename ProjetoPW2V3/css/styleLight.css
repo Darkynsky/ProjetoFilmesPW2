@@ -140,7 +140,15 @@ body{
 /* TABELA DE EXIBIÇÃO */
 
 .tbExibicao{
+    clear: both;
     background-color: aliceblue;
 }
 
 /*  FIM DE TABELA DE EXIBIÇÃO */
+#filme_inserir{
+    float: left;
+}
+#filme_editar{
+    float: right;
+    margin-left: 30px;
+}
