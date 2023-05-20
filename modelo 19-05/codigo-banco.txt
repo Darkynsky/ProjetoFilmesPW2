@@ -1,0 +1,45 @@
+Nome do banco de dados: dbaula
+
+create table tbContato(
+    idContato int PRIMARY key AUTO_INCREMENT,
+    nomeContato varchar(40),
+    emailContato varchar(40),
+    assuntoContato varchar(400),
+    mensagemContato varchar(2000)    
+);
+
+insert into tbContato values(null,'João','joao@gmail.com','assunto do joao','mensagem do joao');
+insert into tbContato values(null,'Maria','maria@gmail.com','assunto da maria','mensagem da maria');
+insert into tbContato values(null,'Ana','ana@gmail.com','assunto da ana','mensagem da ana');
+
+
+SELECT tbfilme.idFilme,tbfilme.filme,tbfilme.idGenero, tbgenero.genero FROM tbfilme
+inner join tbGenero 
+on tbfilme.idGenero = tbGenero.idGenero
+
+SELECT f.idFilme,f.filme,f.idGenero, g.genero FROM tbfilme f
+inner join tbGenero g
+on f.idGenero = g.idGenero
+
+
+create table tbGenero(
+ idGenero int PRIMARY KEY AUTO_INCREMENT,
+ genero varchar(100)
+);
+
+create table tbFilme(
+	idFilme int PRIMARY key AUTO_INCREMENT,
+	filme varchar(100),
+	diretor varchar(100),
+	duracao varchar(100),
+	sinopse varchar(2000),
+	classificacao varchar(100),
+	anoLancamento varchar(100),
+	idGenero int,
+	imagemPrincipal varchar(1000),
+	imagemInterna varchar(100),
+    FOREIGN key (idGenero) REFERENCES tbGenero(idGenero)
+ );
+
+
+insert into tbgenero values (null,'Comédia'),(null,'Ação');
